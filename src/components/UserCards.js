@@ -2,23 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import UserCard from "./UserCard";
 
-export default class UserCardsContainer extends React.Component {
 
+const mapUser = (user, index) => <UserCard {...user} key={index} />;
 
-    constructor() {
-        super();
-    }
+const UserCardsContainer = ({ users }) => (
+  <ul className="UserCardsContainer">
+    {users.map(mapUser)}
+  </ul>
+);
 
-    mapUser(user, index) {
-        return <UserCard {...user} key={index}/>
-    }
+export default UserCardsContainer;
 
-    render() {
-        return <ul className="UserCardsContainer">
-            {this.props.users.map(this.mapUser)}
-        </ul>
-    }
-}
 UserCardsContainer.propTypes = {
-    users: PropTypes.array
+  users: PropTypes.arrayOf(PropTypes.object).isRequired
 };

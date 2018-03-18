@@ -1,15 +1,14 @@
 import React from "react";
 
-export default class UserCard extends React.Component {
+// export interface UserCardProps {
+//     name: string;
+//     lastName: string;
+// }
 
-    constructor() {
-        super();
-    }
+const UserCard = () => (
+  <li className="UserCard">
+    {this.props.name} {this.props.lastName}
+  </li>
+);
 
-    render() {
-        const {name, lastName} = this.props;
-        return <li className="UserCard">
-            {name} {lastName}
-        </li>
-    }
-}
+export default UserCard;
