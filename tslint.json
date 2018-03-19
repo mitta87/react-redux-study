@@ -1,0 +1,27 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint-config-airbnb"
+  ],
+  "jsRules": {},
+  "rules": {
+    "quotemark": [
+      true,
+      "double"
+    ],
+    "variable-name": [true, "allow-pascal-case"],
+    "max-line-length": [
+      true,
+      120
+    ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "never",
+        "singleline": "never",
+        "jsx": "never"
+      }
+    ]
+  },
+  "rulesDirectory": []
+}
