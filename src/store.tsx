@@ -1,5 +1,6 @@
+import reduxThunk from "redux-thunk";
 import users from "./reducers/users";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { StoreState } from "./types/index";
 
 export const initialData: StoreState = {
@@ -10,4 +11,4 @@ export const initialData: StoreState = {
   users: []
 };
 
-export default createStore<StoreState>(users, initialData);
+export default createStore<StoreState>(users, initialData, applyMiddleware(reduxThunk));

@@ -9,6 +9,8 @@ export default (state: StoreState = initialData, action: UserAction) => {
       return { ...state, newUser: { name: "", lastName: "" }, users: [...state.users, action.user] };
     case actions.CHANGE_NEW_USER:
       return { ...state, newUser: action.newUser };
+      case actions.RECEIVE_USERS:
+          return { ...state, users: action.users };
     default: return state;
   }
 };

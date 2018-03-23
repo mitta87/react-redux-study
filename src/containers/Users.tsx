@@ -6,7 +6,6 @@ import { StoreState, User } from "../types/index";
 
 export default connect(
     (state: StoreState) => {
-      console.log("connect", state);
       return {
         users: state.users,
         newUser: state.newUser

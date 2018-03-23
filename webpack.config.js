@@ -28,7 +28,15 @@ module.exports = {
     hot: true,
     inline: true,
     publicPath: "/",
-    contentBase: "/dist"
+    contentBase: "/dist",
+    port: 9000,
+    compress: true,
+    proxy: {
+      '/users': {
+        target: 'http://localhost:3000',
+        secure: false
+      }
+    }
   },
   module: {
     rules: [
